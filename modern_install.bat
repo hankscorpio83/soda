@@ -1,3 +1,5 @@
+@setlocal enableextensions
+@cd /d "%~dp0"
 echo off
 cls
 echo "Adding registry entries..."
@@ -16,5 +18,5 @@ REG.EXE ADD "HKLM\Software\Software Allies\SCOR\version 1.0" /V InstallType /T R
 REG.EXE ADD "HKLM\Software\Software Allies\SCOR\version 1.0" /V CDpath /T REG_SZ /D "D:" /f
 REG.EXE ADD "HKLM\Software\Software Allies\SCOR\version 1.0" /V HomeDir /T REG_SZ /D "%CD%%backslash%"
 echo "Configuring compatibilty mode..."
-REG.EXE ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /V "%CD%%backslash%offroad.exe" /T REG_SZ /D "~ RUNASADMIN 256COLOR 630x480 WIN95" /f
-REG.EXE ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /V "%CD%%backslash%track.exe" /T REG_SZ /D "~ RUNASADMIN 256COLOR 630x480 WIN95" /f
+REG.EXE ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /V "%CD%%backslash%offroad.exe" /T REG_SZ /D "~ RUNASADMIN 256COLOR 640x480 WIN95" /f
+REG.EXE ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /V "%CD%%backslash%track.exe" /T REG_SZ /D "~ RUNASADMIN 256COLOR 640x480 WIN95" /f
